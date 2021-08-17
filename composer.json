@@ -9,9 +9,13 @@
             "email": "deepak.kumar@r-ims.com"
         }
     ],
-    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    }, 
     "autoload": {
         "psr-4": {"dctest\\HelloWorld\\": "src/"}
-    },
-    "require": {}
+    }
 }

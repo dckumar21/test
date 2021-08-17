@@ -1,0 +1,17 @@
+{
+    "name": "dc/hello-composer",
+    "description": "A simple hello world composer package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Deepak",
+            "email": "deepak.kumar@r-ims.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"dc\\HelloWorld\\": "src/"}
+    },
+    "require": {}
+}

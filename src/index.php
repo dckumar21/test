@@ -1,6 +1,6 @@
 <?php 
 
-namespace dc\HelloWorld;
+namespace dctest\HelloWorld;
 
 class Index
 {

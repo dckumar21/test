@@ -1,5 +1,5 @@
 {
-    "name": "dc/hello-composer",
+    "name": "dctest/hello-composer",
     "description": "A simple hello world composer package",
     "type": "library",
     "license": "MIT",
@@ -11,7 +11,7 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"dc\\HelloWorld\\": "src/"}
+        "psr-4": {"dctest\\HelloWorld\\": "src/"}
     },
     "require": {}
 }

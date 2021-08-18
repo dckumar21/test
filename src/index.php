@@ -44,20 +44,21 @@ class Index
         $viewName = 'index.php';
 
         if(!is_file($moduleControllerPath.'/'.$controllerName)){
-            $contents = 'This is a test!';           // Some simple example content.
+            $contents = $this->controllerData();           // Some simple example content.
             file_put_contents($moduleControllerPath.'/'.$controllerName, $contents);     // Save our content to the file.
         } 
     }
-    function controllerData(){
+    function controllerData($name = ""){
         $content = "<?php \n ";
-        $content = "defined('BASEPATH') or exit('No direct script access allowed');";
-        $content = "class Admin extends CT_Controller";
-        $content = "{";
-        $content = "function __construct()";
-        $content = " {";
-        $content = "parent::__construct(); ";
-        $content = "$this->load->model('Admin_model'); ";
-        $content = "}";
+        $content .= "defined('BASEPATH') or exit('No direct script access allowed');";
+        $content .= "class ".$name." extends CT_Controller";
+        $content .= "{";
+            $content .= "function __construct()";
+            $content .= " {";
+                $content .= "parent::__construct(); ";
+                $content .= "$this->load->model('".$name."_model'); ";
+            $content .= "}";
+        $content .= "}";
         
     }
 

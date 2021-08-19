@@ -4,6 +4,16 @@ namespace dctest\HelloWorld;
 
 class Index
 {
+    public function Index(){
+        $cmd = @$argv[1];  
+        if($cmd == "make"){
+            $cmdFunction = @$argv[2]; 
+            if($cmdFunction == "module"){
+                $moduleName = @$argv[3]; 
+                $this->module($moduleName);
+            }
+        }
+    }
     public function module($moduleName = "")
     {
         if($moduleName == ""){
@@ -57,6 +67,9 @@ class Index
             $content .= " {";
                 $content .= "parent::__construct(); ";
                 $content .= "$this->load->model('".$name."_model'); ";
+            $content .= "}";
+            $content .= "function index()";
+            $content .= " {";
             $content .= "}";
         $content .= "}";
         

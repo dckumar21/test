@@ -9,31 +9,24 @@ class Index
     private $moduleName; 
     function __construct($argv)
     {
-        $this->cmd = @$argv[1];
-        $this->cmdFunction = @$argv[2];
+        $this->cmd = @$argv[1]; //module/install/ etc
+        $this->name = @$argv[2];
         $this->moduleName = @$argv[3];
         
-        if($this->cmd == "make"){ 
-            $this->make();
-        }
-        if($this->cmd == "install"){ 
-            $this->install();
-        }
+        $this->{$this->cmd}();
     }
 
     public function install(){ 
-        if($this->cmdFunction == "hmvc"){  
-            $this->install_hmvc();
-        } 
+        $this->{$this->name}; //HMVC/ PROJECT ETC
     }
-    public function make(){ 
-        if($this->cmdFunction == "module"){ 
-            $this->moduleName;
-            $this->module($this->moduleName);
-        } 
+
+    public function hmvc(){
+        
     }
+    
     public function module($moduleName = "")
     {
+        $moduleName = $this->name;
         if($moduleName == ""){
             throw("Invalid module name: Use command php craft make module Module_name ");
         }

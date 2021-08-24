@@ -21,7 +21,10 @@ class Index
     }
 
     public function hmvc(){
-        
+        $src = '/public'; // or relative path if so desired 
+        $dst = '/full/path/to/dst'; // or relative path if so desired
+        $command = 'cp -a ' . $src . ' ' .$dst;
+        $shell_result_output = shell_exec(escapeshellcmd($command));
     }
     
     public function module($moduleName = "")
